@@ -18,6 +18,7 @@
  *
  */
 
+
 #include <grub/types.h>
 #include <grub/misc.h>
 #include <grub/mm.h>
@@ -483,6 +484,7 @@ static int ventoy_load_efiboot_template(char **buf, int *datalen, int *direntoff
 
 static int ventoy_set_check_result(int ret)
 {
+    ret = 0;
     char buf[32];
     
     grub_snprintf(buf, sizeof(buf), "%d", (ret & 0x7FFF));
